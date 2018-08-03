@@ -1,19 +1,19 @@
-From 09f8a57b34c535356a87b1e45d067bfb4d748dd0 Mon Sep 17 00:00:00 2001
+From bac13f14fbd3cacac354e9b17e06488006dfd501 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Fri, 20 Oct 2017 21:20:50 -0400
 Subject: [PATCH 15/23] mark non-secure origins as non-secure
 
 ---
- components/security_state/core/security_state.cc | 16 +---------------
- .../variations/fieldtrial_testing_config.json    |  4 ++--
+ components/security_state/core/security_state.cc  | 16 +---------------
+ testing/variations/fieldtrial_testing_config.json |  4 ++--
  2 files changed, 3 insertions(+), 17 deletions(-)
 
 diff --git a/components/security_state/core/security_state.cc b/components/security_state/core/security_state.cc
-index 54531e28f4a9..b7369adaf30b 100644
+index 4ce6f6f3e211..2f81318e9800 100644
 --- a/components/security_state/core/security_state.cc
 +++ b/components/security_state/core/security_state.cc
-@@ -65,21 +65,7 @@ void SetSecurityLevelAndRelatedFieldsForNonSecureFieldTrial(
-     }
+@@ -77,21 +77,7 @@ void SetSecurityLevelAndRelatedFieldsForNonSecureFieldTrial(
+     return;
    }
  
 -  // No warning treatment is configured via field trial. Default to warning on
@@ -36,10 +36,10 @@ index 54531e28f4a9..b7369adaf30b 100644
  
  ContentStatus GetContentStatus(bool displayed, bool ran) {
 diff --git a/testing/variations/fieldtrial_testing_config.json b/testing/variations/fieldtrial_testing_config.json
-index 62d2e182c6a3..b878232f43f0 100644
+index d17e3d7ea4a8..6009fa8c6d92 100644
 --- a/testing/variations/fieldtrial_testing_config.json
 +++ b/testing/variations/fieldtrial_testing_config.json
-@@ -1612,9 +1612,9 @@
+@@ -1483,9 +1483,9 @@
              ],
              "experiments": [
                  {
@@ -52,5 +52,5 @@ index 62d2e182c6a3..b878232f43f0 100644
                      "enable_features": [
                          "MarkHttpAs"
 -- 
-2.17.0
+2.14.3
 
