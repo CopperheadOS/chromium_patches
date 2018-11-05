@@ -1,4 +1,4 @@
-From 159c277f966c9c20045a4e88657cb875c656be09 Mon Sep 17 00:00:00 2001
+From aa79d7d5db01959390ef8c79dc4536da6d37ee1e Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Tue, 22 Nov 2016 07:34:45 -0500
 Subject: [PATCH 12/23] always use the WebView sandbox
@@ -8,10 +8,10 @@ Subject: [PATCH 12/23] always use the WebView sandbox
  1 file changed, 2 insertions(+), 15 deletions(-)
 
 diff --git a/android_webview/glue/java/src/com/android/webview/chromium/WebViewChromiumFactoryProvider.java b/android_webview/glue/java/src/com/android/webview/chromium/WebViewChromiumFactoryProvider.java
-index ebdc7e0fb43c..b89896bd37f3 100644
+index 17dbf9deab42..ffb1eade9d66 100644
 --- a/android_webview/glue/java/src/com/android/webview/chromium/WebViewChromiumFactoryProvider.java
 +++ b/android_webview/glue/java/src/com/android/webview/chromium/WebViewChromiumFactoryProvider.java
-@@ -228,21 +228,8 @@ public class WebViewChromiumFactoryProvider implements WebViewFactoryProvider {
+@@ -241,21 +241,8 @@ public class WebViewChromiumFactoryProvider implements WebViewFactoryProvider {
                  CommandLineUtil.initCommandLine();
              }
  

@@ -1,4 +1,4 @@
-From 80d352fa46eddf4a976436ed60935fb388478bdf Mon Sep 17 00:00:00 2001
+From 57e4d2593f50d1ed8c1a94b61fbdd476efc48f8b Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Thu, 26 Jan 2017 01:30:12 -0500
 Subject: [PATCH 13/23] use 64-bit WebView processes
@@ -8,12 +8,12 @@ Subject: [PATCH 13/23] use 64-bit WebView processes
  1 file changed, 1 insertion(+), 2 deletions(-)
 
 diff --git a/android_webview/apk/java/AndroidManifest.xml b/android_webview/apk/java/AndroidManifest.xml
-index ca3ab0f9aa48..ebd4474952ac 100644
+index 94264a9f67eb..971f119a4080 100644
 --- a/android_webview/apk/java/AndroidManifest.xml
 +++ b/android_webview/apk/java/AndroidManifest.xml
-@@ -21,8 +21,7 @@
+@@ -24,8 +24,7 @@
      <application android:label="Android System WebView"
-                  android:icon="@drawable/icon_webview"
+                  android:icon="@{{package|default('com.android.webview')}}:drawable/icon_webview"
                   android:name="{{ application_name|default('com.android.webview.chromium.WebViewApplication') }}"
 -                 android:multiArch="true"
 -                 android:use32bitAbi="true">

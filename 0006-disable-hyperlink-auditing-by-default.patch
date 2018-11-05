@@ -1,4 +1,4 @@
-From 7d065155d740ba85e981ab718a236081099ec4df Mon Sep 17 00:00:00 2001
+From 9eb62f0d9aaae95c067d1b4b7f2a057876e72b5b Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Sat, 26 Nov 2016 14:57:22 -0500
 Subject: [PATCH 06/23] disable hyperlink auditing by default
@@ -9,10 +9,10 @@ Subject: [PATCH 06/23] disable hyperlink auditing by default
  2 files changed, 2 insertions(+), 2 deletions(-)
 
 diff --git a/chrome/browser/about_flags.cc b/chrome/browser/about_flags.cc
-index 10bda7b8b379..d65730242e9c 100644
+index d029d0648c92..1cc207bb7fc4 100644
 --- a/chrome/browser/about_flags.cc
 +++ b/chrome/browser/about_flags.cc
-@@ -1324,7 +1324,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -1480,7 +1480,7 @@ const FeatureEntry kFeatureEntries[] = {
       SINGLE_VALUE_TYPE(switches::kDisablePushStateThrottle)},
      {"disable-hyperlink-auditing", flag_descriptions::kHyperlinkAuditingName,
       flag_descriptions::kHyperlinkAuditingDescription, kOsAll,
@@ -22,10 +22,10 @@ index 10bda7b8b379..d65730242e9c 100644
      {"contextual-search", flag_descriptions::kContextualSearchName,
       flag_descriptions::kContextualSearchDescription, kOsAndroid,
 diff --git a/chrome/browser/chrome_content_browser_client.cc b/chrome/browser/chrome_content_browser_client.cc
-index ec54b365d46d..c619427cdd3b 100644
+index 98dd32625265..5f872d552061 100644
 --- a/chrome/browser/chrome_content_browser_client.cc
 +++ b/chrome/browser/chrome_content_browser_client.cc
-@@ -1015,7 +1015,7 @@ void ChromeContentBrowserClient::RegisterLocalStatePrefs(
+@@ -1041,7 +1041,7 @@ void ChromeContentBrowserClient::RegisterLocalStatePrefs(
  void ChromeContentBrowserClient::RegisterProfilePrefs(
      user_prefs::PrefRegistrySyncable* registry) {
    registry->RegisterBooleanPref(prefs::kDisable3DAPIs, false);
