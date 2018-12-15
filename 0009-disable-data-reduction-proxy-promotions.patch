@@ -1,4 +1,4 @@
-From c0fc67ce4032792a3c17e649f5f6e15e85487499 Mon Sep 17 00:00:00 2001
+From 888c4367b2aa44ee6e1ef771c94bb617ab8558f2 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Wed, 6 Sep 2017 14:53:07 -0400
 Subject: [PATCH 09/23] disable data reduction proxy promotions
@@ -8,10 +8,10 @@ Subject: [PATCH 09/23] disable data reduction proxy promotions
  1 file changed, 3 insertions(+), 18 deletions(-)
 
 diff --git a/testing/variations/fieldtrial_testing_config.json b/testing/variations/fieldtrial_testing_config.json
-index 263c434b2ad5..c5b2a97484a9 100644
+index 8db49786d59c..c211b14e7bfd 100644
 --- a/testing/variations/fieldtrial_testing_config.json
 +++ b/testing/variations/fieldtrial_testing_config.json
-@@ -942,7 +942,7 @@
+@@ -1059,7 +1059,7 @@
              ],
              "experiments": [
                  {
@@ -20,7 +20,7 @@ index 263c434b2ad5..c5b2a97484a9 100644
                  }
              ]
          }
-@@ -1206,19 +1206,7 @@
+@@ -1289,19 +1289,7 @@
              ],
              "experiments": [
                  {
@@ -41,7 +41,7 @@ index 263c434b2ad5..c5b2a97484a9 100644
                  }
              ]
          }
-@@ -1242,10 +1230,7 @@
+@@ -1325,10 +1313,7 @@
              ],
              "experiments": [
                  {

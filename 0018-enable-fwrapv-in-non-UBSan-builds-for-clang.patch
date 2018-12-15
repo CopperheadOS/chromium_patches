@@ -1,4 +1,4 @@
-From 528e15551e78f1f8b98eb68af3620e536ec5e03e Mon Sep 17 00:00:00 2001
+From a1374bfe8346660ad63cdfbb25c385e549971f6a Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Thu, 22 Dec 2016 07:15:34 -0500
 Subject: [PATCH 18/23] enable -fwrapv in non-UBSan builds for clang
@@ -8,10 +8,10 @@ Subject: [PATCH 18/23] enable -fwrapv in non-UBSan builds for clang
  1 file changed, 6 insertions(+)
 
 diff --git a/build/config/compiler/BUILD.gn b/build/config/compiler/BUILD.gn
-index 38f49292b2d0..5bfd9faaf05b 100644
+index 932f72543e32..86a2c5629d95 100644
 --- a/build/config/compiler/BUILD.gn
 +++ b/build/config/compiler/BUILD.gn
-@@ -275,6 +275,9 @@ config("compiler") {
+@@ -276,6 +276,9 @@ config("compiler") {
        # crbug.com/485542
        ldflags += [ "-Wl,--fatal-warnings" ]
      }
@@ -21,7 +21,7 @@ index 38f49292b2d0..5bfd9faaf05b 100644
    } else {
      cflags += [
        # Assume UTF-8 by default to avoid code page dependencies.
-@@ -284,6 +287,9 @@ config("compiler") {
+@@ -285,6 +288,9 @@ config("compiler") {
        # Don't look for includes in %INCLUDE%.
        cflags += [ "/X" ]
      }

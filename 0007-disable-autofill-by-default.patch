@@ -1,4 +1,4 @@
-From 63a1eb8454fe557bd71fce7dd8c95cc1e8738531 Mon Sep 17 00:00:00 2001
+From 916d3973fdf0f1377b00a7d9bb1ad53f6569e4a2 Mon Sep 17 00:00:00 2001
 From: Rashed Abdel-Tawab <rashed@linux.com>
 Date: Sun, 4 Nov 2018 19:22:07 -0800
 Subject: [PATCH 07/23] disable autofill by default
@@ -8,10 +8,10 @@ Subject: [PATCH 07/23] disable autofill by default
  1 file changed, 3 insertions(+), 3 deletions(-)
 
 diff --git a/components/autofill/core/common/autofill_prefs.cc b/components/autofill/core/common/autofill_prefs.cc
-index 5b9c0dcf69d0..bc3aa0fccadf 100644
+index c6485791a24e..8b4debb09057 100644
 --- a/components/autofill/core/common/autofill_prefs.cc
 +++ b/components/autofill/core/common/autofill_prefs.cc
-@@ -75,10 +75,10 @@ void RegisterProfilePrefs(user_prefs::PrefRegistrySyncable* registry) {
+@@ -91,10 +91,10 @@ void RegisterProfilePrefs(user_prefs::PrefRegistrySyncable* registry) {
        prefs::kAutofillBillingCustomerNumber, 0.0,
        user_prefs::PrefRegistrySyncable::SYNCABLE_PRIORITY_PREF);
    registry->RegisterBooleanPref(
@@ -24,7 +24,7 @@ index 5b9c0dcf69d0..bc3aa0fccadf 100644
        user_prefs::PrefRegistrySyncable::SYNCABLE_PREF);
    registry->RegisterIntegerPref(
        prefs::kAutofillLastVersionDeduped, 0,
-@@ -87,7 +87,7 @@ void RegisterProfilePrefs(user_prefs::PrefRegistrySyncable* registry) {
+@@ -103,7 +103,7 @@ void RegisterProfilePrefs(user_prefs::PrefRegistrySyncable* registry) {
        prefs::kAutofillLastVersionDisusedAddressesDeleted, 0,
        user_prefs::PrefRegistrySyncable::SYNCABLE_PREF);
    registry->RegisterBooleanPref(

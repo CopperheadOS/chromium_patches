@@ -1,4 +1,4 @@
-From d22a9aff96044ab98587105009141eda977606ed Mon Sep 17 00:00:00 2001
+From f4dadaf9cf8abdc8d79f6ec40e26e43540d62667 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Tue, 6 Mar 2018 00:27:41 -0500
 Subject: [PATCH 10/23] disable showing popular sites
@@ -31,10 +31,10 @@ index b7d2955071e3..210aaf6c0349 100644
  const base::Feature kNtpCustomLinks{"NewTabPageCustomLinks",
                                      base::FEATURE_DISABLED_BY_DEFAULT};
 diff --git a/testing/variations/fieldtrial_testing_config.json b/testing/variations/fieldtrial_testing_config.json
-index c5b2a97484a9..970e24ff853b 100644
+index c211b14e7bfd..48af5332aae6 100644
 --- a/testing/variations/fieldtrial_testing_config.json
 +++ b/testing/variations/fieldtrial_testing_config.json
-@@ -2502,29 +2502,11 @@
+@@ -2584,29 +2584,11 @@
                  "ios"
              ],
              "experiments": [
