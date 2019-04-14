@@ -1,4 +1,4 @@
-From f4dadaf9cf8abdc8d79f6ec40e26e43540d62667 Mon Sep 17 00:00:00 2001
+From 92a5e5befe99f02f1a3ca077b1f765f2998aa96c Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Tue, 6 Mar 2018 00:27:41 -0500
 Subject: [PATCH 10/23] disable showing popular sites
@@ -9,7 +9,7 @@ Subject: [PATCH 10/23] disable showing popular sites
  2 files changed, 2 insertions(+), 20 deletions(-)
 
 diff --git a/components/ntp_tiles/constants.cc b/components/ntp_tiles/constants.cc
-index b7d2955071e3..210aaf6c0349 100644
+index 9205d8093306..079ecb4009f0 100644
 --- a/components/ntp_tiles/constants.cc
 +++ b/components/ntp_tiles/constants.cc
 @@ -13,7 +13,7 @@ namespace ntp_tiles {
@@ -29,12 +29,12 @@ index b7d2955071e3..210aaf6c0349 100644
 +    "UsePopularSitesSuggestions", base::FEATURE_DISABLED_BY_DEFAULT};
  
  const base::Feature kNtpCustomLinks{"NewTabPageCustomLinks",
-                                     base::FEATURE_DISABLED_BY_DEFAULT};
+                                     base::FEATURE_ENABLED_BY_DEFAULT};
 diff --git a/testing/variations/fieldtrial_testing_config.json b/testing/variations/fieldtrial_testing_config.json
-index c211b14e7bfd..48af5332aae6 100644
+index e4aeb25b9c5c..54ea7ba6f4c8 100644
 --- a/testing/variations/fieldtrial_testing_config.json
 +++ b/testing/variations/fieldtrial_testing_config.json
-@@ -2584,29 +2584,11 @@
+@@ -2820,29 +2820,11 @@
                  "ios"
              ],
              "experiments": [

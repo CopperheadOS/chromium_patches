@@ -1,4 +1,4 @@
-From 888c4367b2aa44ee6e1ef771c94bb617ab8558f2 Mon Sep 17 00:00:00 2001
+From 513c415e360451cffbbbda3a29bc87311c7a2784 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Wed, 6 Sep 2017 14:53:07 -0400
 Subject: [PATCH 09/23] disable data reduction proxy promotions
@@ -8,10 +8,10 @@ Subject: [PATCH 09/23] disable data reduction proxy promotions
  1 file changed, 3 insertions(+), 18 deletions(-)
 
 diff --git a/testing/variations/fieldtrial_testing_config.json b/testing/variations/fieldtrial_testing_config.json
-index 8db49786d59c..c211b14e7bfd 100644
+index a244ff80c87f..e4aeb25b9c5c 100644
 --- a/testing/variations/fieldtrial_testing_config.json
 +++ b/testing/variations/fieldtrial_testing_config.json
-@@ -1059,7 +1059,7 @@
+@@ -1160,7 +1160,7 @@
              ],
              "experiments": [
                  {
@@ -20,7 +20,7 @@ index 8db49786d59c..c211b14e7bfd 100644
                  }
              ]
          }
-@@ -1289,19 +1289,7 @@
+@@ -1429,19 +1429,7 @@
              ],
              "experiments": [
                  {
@@ -41,13 +41,13 @@ index 8db49786d59c..c211b14e7bfd 100644
                  }
              ]
          }
-@@ -1325,10 +1313,7 @@
+@@ -1457,10 +1445,7 @@
              ],
              "experiments": [
                  {
 -                    "name": "Enabled",
 -                    "enable_features": [
--                        "DataReductionProxyLowMemoryDevicePromo"
+-                        "DataReductionProxyBrotliHoldback"
 -                    ]
 +                    "name": "Disabled"
                  }

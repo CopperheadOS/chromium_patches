@@ -1,4 +1,4 @@
-From d470760dc2cfb1d24d1b2d8729aca21a2b3c0e35 Mon Sep 17 00:00:00 2001
+From b14dc3d4b8ff8e13a88967c10441ab35f17207f9 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Mon, 28 Nov 2016 15:49:09 -0500
 Subject: [PATCH 19/23] add DuckDuckGo as the default search engine
@@ -53,10 +53,10 @@ index c19dd0e91cf9..02f6b1612621 100644
  };
  
 diff --git a/components/search_engines/template_url_prepopulate_data.cc b/components/search_engines/template_url_prepopulate_data.cc
-index 81e9948af2da..df034696acc0 100644
+index ac8e5cdd1c02..b1410089c53b 100644
 --- a/components/search_engines/template_url_prepopulate_data.cc
 +++ b/components/search_engines/template_url_prepopulate_data.cc
-@@ -51,548 +51,548 @@ namespace {
+@@ -33,548 +33,548 @@ namespace {
  
  // Default (for countries with no better engine set)
  const PrepopulatedEngine* const engines_default[] = {

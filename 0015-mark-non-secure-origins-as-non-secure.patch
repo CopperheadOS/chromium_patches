@@ -1,4 +1,4 @@
-From 3b7a6b685daf382ed0ca7175a6255e5fbd6f64cd Mon Sep 17 00:00:00 2001
+From 6d338b628f4015e39b5618fd580256220d27b722 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Fri, 20 Oct 2017 21:20:50 -0400
 Subject: [PATCH 15/23] mark non-secure origins as non-secure
@@ -9,7 +9,7 @@ Subject: [PATCH 15/23] mark non-secure origins as non-secure
  2 files changed, 3 insertions(+), 17 deletions(-)
 
 diff --git a/components/security_state/core/security_state.cc b/components/security_state/core/security_state.cc
-index fc2ca572e449..35dbae23e95e 100644
+index 6e825c52e231..ac5abc15bf9b 100644
 --- a/components/security_state/core/security_state.cc
 +++ b/components/security_state/core/security_state.cc
 @@ -71,21 +71,7 @@ void SetSecurityLevelAndRelatedFieldsForNonSecureFieldTrial(
@@ -36,10 +36,10 @@ index fc2ca572e449..35dbae23e95e 100644
  
  ContentStatus GetContentStatus(bool displayed, bool ran) {
 diff --git a/testing/variations/fieldtrial_testing_config.json b/testing/variations/fieldtrial_testing_config.json
-index 48af5332aae6..0c7102a6b133 100644
+index 54ea7ba6f4c8..6783a4d08762 100644
 --- a/testing/variations/fieldtrial_testing_config.json
 +++ b/testing/variations/fieldtrial_testing_config.json
-@@ -2039,9 +2039,9 @@
+@@ -2203,9 +2203,9 @@
              ],
              "experiments": [
                  {
