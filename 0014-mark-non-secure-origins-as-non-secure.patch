@@ -1,0 +1,28 @@
+From b56df4e1b774386e35c589ecaec711ffc36c9d69 Mon Sep 17 00:00:00 2001
+From: Daniel Micay <danielmicay@gmail.com>
+Date: Fri, 20 Oct 2017 21:20:50 -0400
+Subject: [PATCH 14/23] mark non-secure origins as non-secure
+
+---
+ components/security_state/core/security_state.cc | 5 +----
+ 1 file changed, 1 insertion(+), 4 deletions(-)
+
+diff --git a/components/security_state/core/security_state.cc b/components/security_state/core/security_state.cc
+index cb27b5765db7..5ed7c2a82072 100644
+--- a/components/security_state/core/security_state.cc
++++ b/components/security_state/core/security_state.cc
+@@ -48,10 +48,7 @@ void SetSecurityLevelAndRelatedFieldsForNonSecureFieldTrial(
+     }
+   }
+ 
+-  // Default to dangerous on editing form fields and otherwise
+-  // warning.
+-  security_info->security_level =
+-      input_events.insecure_field_edited ? DANGEROUS : HTTP_SHOW_WARNING;
++  security_info->security_level = DANGEROUS;
+ }
+ 
+ ContentStatus GetContentStatus(bool displayed, bool ran) {
+-- 
+2.14.3
+

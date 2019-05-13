@@ -1,0 +1,68 @@
+From e590b0004e7f1c960c938b1822854926a38ea76e Mon Sep 17 00:00:00 2001
+From: Rashed Abdel-Tawab <rashed@linux.com>
+Date: Sat, 13 Apr 2019 20:38:13 -0700
+Subject: [PATCH 23/23] Revert "disable data reduction proxy promotions"
+
+This reverts commit c813f5372c846011646013f2c1c6701f5fe3a4e4.
+---
+ testing/variations/fieldtrial_testing_config.json | 23 +++++++++++++++++++----
+ 1 file changed, 19 insertions(+), 4 deletions(-)
+
+diff --git a/testing/variations/fieldtrial_testing_config.json b/testing/variations/fieldtrial_testing_config.json
+index 7a46c3307118..2aa1326dd5cb 100644
+--- a/testing/variations/fieldtrial_testing_config.json
++++ b/testing/variations/fieldtrial_testing_config.json
+@@ -1119,7 +1119,7 @@
+             ],
+             "experiments": [
+                 {
+-                    "name": "Disabled"
++                    "name": "Enabled"
+                 }
+             ]
+         }
+@@ -1358,7 +1358,19 @@
+             ],
+             "experiments": [
+                 {
+-                    "name": "Disabled"
++                    "name": "Enabled"
++                },
++                {
++                    "name": "EnabledWithSnackbarPromo",
++                    "params": {
++                        "snackbar_promo_data_savings_in_megabytes": "1024;100"
++                    }
++                },
++                {
++                    "name": "SnackbarPromoOnly",
++                    "params": {
++                        "snackbar_promo_data_savings_in_megabytes": "1024;100"
++                    }
+                 }
+             ]
+         }
+@@ -1370,7 +1382,7 @@
+             ],
+             "experiments": [
+                 {
+-                    "name": "Disabled"
++                    "name": "Enabled"
+                 }
+             ]
+         }
+@@ -1382,7 +1394,10 @@
+             ],
+             "experiments": [
+                 {
+-                    "name": "Disabled",
++                    "name": "Enabled",
++                    "enable_features": [
++                        "DataReductionProxyLowMemoryDevicePromo"
++                    ]
+                 }
+             ]
+         }
+-- 
+2.14.3
+

@@ -1,4 +1,4 @@
-From 92a5e5befe99f02f1a3ca077b1f765f2998aa96c Mon Sep 17 00:00:00 2001
+From 2c47c1246bb97089cde06751df3e1353353e5a01 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Tue, 6 Mar 2018 00:27:41 -0500
 Subject: [PATCH 10/23] disable showing popular sites
@@ -9,10 +9,10 @@ Subject: [PATCH 10/23] disable showing popular sites
  2 files changed, 2 insertions(+), 20 deletions(-)
 
 diff --git a/components/ntp_tiles/constants.cc b/components/ntp_tiles/constants.cc
-index 9205d8093306..079ecb4009f0 100644
+index b40488bcd098..3cfb203d065a 100644
 --- a/components/ntp_tiles/constants.cc
 +++ b/components/ntp_tiles/constants.cc
-@@ -13,7 +13,7 @@ namespace ntp_tiles {
+@@ -12,7 +12,7 @@ namespace ntp_tiles {
  const char kPopularSitesFieldTrialName[] = "NTPPopularSites";
  
  const base::Feature kPopularSitesBakedInContentFeature{
@@ -21,20 +21,19 @@ index 9205d8093306..079ecb4009f0 100644
  
  const base::Feature kNtpMostLikelyFaviconsFromServerFeature{
      "NTPMostLikelyFaviconsFromServer", base::FEATURE_ENABLED_BY_DEFAULT};
-@@ -22,7 +22,7 @@ const base::Feature kSiteExplorationUiFeature{
+@@ -21,6 +21,6 @@ const base::Feature kSiteExplorationUiFeature{
      "SiteExplorationUi", base::FEATURE_DISABLED_BY_DEFAULT};
  
  const base::Feature kUsePopularSitesSuggestions{
 -    "UsePopularSitesSuggestions", base::FEATURE_ENABLED_BY_DEFAULT};
 +    "UsePopularSitesSuggestions", base::FEATURE_DISABLED_BY_DEFAULT};
  
- const base::Feature kNtpCustomLinks{"NewTabPageCustomLinks",
-                                     base::FEATURE_ENABLED_BY_DEFAULT};
+ }  // namespace ntp_tiles
 diff --git a/testing/variations/fieldtrial_testing_config.json b/testing/variations/fieldtrial_testing_config.json
-index e4aeb25b9c5c..54ea7ba6f4c8 100644
+index 7b58bf3a72cb..7a46c3307118 100644
 --- a/testing/variations/fieldtrial_testing_config.json
 +++ b/testing/variations/fieldtrial_testing_config.json
-@@ -2820,29 +2820,11 @@
+@@ -2650,29 +2650,11 @@
                  "ios"
              ],
              "experiments": [
