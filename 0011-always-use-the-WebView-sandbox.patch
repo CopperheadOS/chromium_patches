@@ -1,17 +1,17 @@
-From 7aacf85282c507c5cc2c5e14d4e1420dd3612644 Mon Sep 17 00:00:00 2001
+From e011b6dded9754782570f00e86816318acf05c43 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Tue, 22 Nov 2016 07:34:45 -0500
-Subject: [PATCH 12/23] always use the WebView sandbox
+Subject: [PATCH 11/22] always use the WebView sandbox
 
 ---
  .../chromium/WebViewChromiumFactoryProvider.java        | 17 ++---------------
  1 file changed, 2 insertions(+), 15 deletions(-)
 
 diff --git a/android_webview/glue/java/src/com/android/webview/chromium/WebViewChromiumFactoryProvider.java b/android_webview/glue/java/src/com/android/webview/chromium/WebViewChromiumFactoryProvider.java
-index 99e4c95cc5e9..9d977baf2b7f 100644
+index 025ba9867536..f7e37b9d6f74 100644
 --- a/android_webview/glue/java/src/com/android/webview/chromium/WebViewChromiumFactoryProvider.java
 +++ b/android_webview/glue/java/src/com/android/webview/chromium/WebViewChromiumFactoryProvider.java
-@@ -274,21 +274,8 @@ public class WebViewChromiumFactoryProvider implements WebViewFactoryProvider {
+@@ -273,21 +273,8 @@ public class WebViewChromiumFactoryProvider implements WebViewFactoryProvider {
                  CommandLineUtil.initCommandLine();
              }
  
@@ -33,7 +33,7 @@ index 99e4c95cc5e9..9d977baf2b7f 100644
 +            CommandLine cl = CommandLine.getInstance();
 +            cl.appendSwitch("webview-sandboxed-renderer");
  
-             ThreadUtils.setWillOverrideUiThread();
+             ThreadUtils.setWillOverrideUiThread(true);
              BuildInfo.setBrowserPackageInfo(packageInfo);
 -- 
 2.14.3

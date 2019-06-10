@@ -1,17 +1,17 @@
-From 81aaa6dd9cbca4906ba06c53dd141ddf6c6cebd6 Mon Sep 17 00:00:00 2001
+From 5ace8fc814bfdd0ed110cefcfcad67241355c131 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Tue, 1 Aug 2017 20:29:56 -0400
-Subject: [PATCH 19/23] stop enabling search engine geolocation by default
+Subject: [PATCH 18/22] stop enabling search engine geolocation by default
 
 ---
  .../search_permissions/search_permissions_service.cc   | 18 ++++--------------
  1 file changed, 4 insertions(+), 14 deletions(-)
 
 diff --git a/chrome/browser/android/search_permissions/search_permissions_service.cc b/chrome/browser/android/search_permissions/search_permissions_service.cc
-index c8ba805c6655..6dda366faf69 100644
+index 0d25effb0798..42010f180796 100644
 --- a/chrome/browser/android/search_permissions/search_permissions_service.cc
 +++ b/chrome/browser/android/search_permissions/search_permissions_service.cc
-@@ -196,7 +196,7 @@ void SearchPermissionsService::ResetDSEPermission(ContentSettingsType type) {
+@@ -197,7 +197,7 @@ void SearchPermissionsService::ResetDSEPermission(ContentSettingsType type) {
    DCHECK(dse_url.is_empty() || IsPermissionControlledByDSE(type, dse_origin));
  
    if (!dse_url.is_empty())
@@ -20,7 +20,7 @@ index c8ba805c6655..6dda366faf69 100644
  }
  
  void SearchPermissionsService::ResetDSEPermissions() {
-@@ -343,11 +343,6 @@ void SearchPermissionsService::InitializeSettingsIfNeeded() {
+@@ -344,11 +344,6 @@ void SearchPermissionsService::InitializeSettingsIfNeeded() {
      return;
    }
  
@@ -32,7 +32,7 @@ index c8ba805c6655..6dda366faf69 100644
    pref_service_->ClearPref(prefs::kDSEWasDisabledByPolicy);
  
    // Initialize the pref for geolocation if it hasn't been initialized yet.
-@@ -372,8 +367,7 @@ void SearchPermissionsService::InitializeSettingsIfNeeded() {
+@@ -373,8 +368,7 @@ void SearchPermissionsService::InitializeSettingsIfNeeded() {
        bool dse_setting = false;
        dict->GetBoolean(kDSESettingKeyDeprecated, &dse_setting);
        if (dse_geolocation_setting == CONTENT_SETTING_ASK) {
@@ -42,7 +42,7 @@ index c8ba805c6655..6dda366faf69 100644
        }
  
        // Delete setting.
-@@ -381,9 +375,7 @@ void SearchPermissionsService::InitializeSettingsIfNeeded() {
+@@ -382,9 +376,7 @@ void SearchPermissionsService::InitializeSettingsIfNeeded() {
      } else if (dse_geolocation_setting == CONTENT_SETTING_ASK) {
        // If the user hasn't explicitly allowed or blocked geolocation for the
        // DSE, initialize it to allowed.
@@ -53,7 +53,7 @@ index c8ba805c6655..6dda366faf69 100644
      }
  
      // Update the content setting with the auto-grants for the DSE.
-@@ -411,9 +403,7 @@ void SearchPermissionsService::InitializeSettingsIfNeeded() {
+@@ -412,9 +404,7 @@ void SearchPermissionsService::InitializeSettingsIfNeeded() {
      // If the user hasn't explicitly allowed or blocked notifications for the
      // DSE, initialize it to allowed.
      if (dse_notifications_setting == CONTENT_SETTING_ASK) {

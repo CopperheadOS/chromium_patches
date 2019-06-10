@@ -1,7 +1,7 @@
-From b56df4e1b774386e35c589ecaec711ffc36c9d69 Mon Sep 17 00:00:00 2001
+From fb0c6e54d7cd1c3e37d93d2051232721d053114b Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Fri, 20 Oct 2017 21:20:50 -0400
-Subject: [PATCH 14/23] mark non-secure origins as non-secure
+Subject: [PATCH 13/22] mark non-secure origins as non-secure
 
 ---
  components/security_state/core/security_state.cc | 5 +----

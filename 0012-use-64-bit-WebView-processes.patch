@@ -1,7 +1,7 @@
-From 58c0d5777ad496ce2f5de4ba7401d5c08ede6d23 Mon Sep 17 00:00:00 2001
+From 20e7c8eac36bf50dc26d11da4f647057acb111af Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Thu, 26 Jan 2017 01:30:12 -0500
-Subject: [PATCH 13/23] use 64-bit WebView processes
+Subject: [PATCH 12/22] use 64-bit WebView processes
 
 ---
  android_webview/apk/java/AndroidManifest.xml | 1 -

@@ -1,7 +1,7 @@
-From ffa0a0de23d0d134e4f9d383e984168d23ac9a27 Mon Sep 17 00:00:00 2001
+From 23a51370f139cd1ca63c2591fd71c15d14d63b9c Mon Sep 17 00:00:00 2001
 From: Rashed Abdel-Tawab <rashed@linux.com>
 Date: Sun, 4 Nov 2018 19:22:07 -0800
-Subject: [PATCH 07/23] disable autofill by default
+Subject: [PATCH 07/22] disable autofill by default
 
 ---
  components/autofill/core/common/autofill_prefs.cc | 6 +++---

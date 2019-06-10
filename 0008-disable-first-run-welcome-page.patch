@@ -1,14 +1,14 @@
-From 02384f82eef02b02518209a4f789c721f8757278 Mon Sep 17 00:00:00 2001
+From b51b1bfabdf48b74968f5bdf395f49677c5a8d19 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Thu, 24 Nov 2016 08:19:03 -0500
-Subject: [PATCH 08/23] disable first run welcome page
+Subject: [PATCH 08/22] disable first run welcome page
 
 ---
  .../src/org/chromium/chrome/browser/firstrun/FirstRunActivity.java    | 4 ++--
  1 file changed, 2 insertions(+), 2 deletions(-)
 
 diff --git a/chrome/android/java/src/org/chromium/chrome/browser/firstrun/FirstRunActivity.java b/chrome/android/java/src/org/chromium/chrome/browser/firstrun/FirstRunActivity.java
-index 5d25a98e0722..575fe8652994 100644
+index 3efa9f945fbb..eb9c82de10f6 100644
 --- a/chrome/android/java/src/org/chromium/chrome/browser/firstrun/FirstRunActivity.java
 +++ b/chrome/android/java/src/org/chromium/chrome/browser/firstrun/FirstRunActivity.java
 @@ -85,7 +85,7 @@ public class FirstRunActivity extends FirstRunActivityBase implements FirstRunPa

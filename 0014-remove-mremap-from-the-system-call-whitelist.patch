@@ -1,7 +1,7 @@
-From 446d7f68e601c12df6c9acba0ee5083044c85dec Mon Sep 17 00:00:00 2001
+From 4d43b60cb3e4fd69986aa0a51eeff13e3fb789d1 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Fri, 18 Nov 2016 10:53:56 -0500
-Subject: [PATCH 15/23] remove mremap from the system call whitelist
+Subject: [PATCH 14/22] remove mremap from the system call whitelist
 
 ---
  sandbox/linux/seccomp-bpf-helpers/baseline_policy_android.cc             | 1 -

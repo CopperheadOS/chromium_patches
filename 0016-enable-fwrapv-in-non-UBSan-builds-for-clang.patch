@@ -1,17 +1,17 @@
-From 668a7cbb158b8b1135f4a49ea8753cd53a3b856a Mon Sep 17 00:00:00 2001
+From 956a2aefeea9eb2be43598e0706d7a301b9c72ce Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Thu, 22 Dec 2016 07:15:34 -0500
-Subject: [PATCH 17/23] enable -fwrapv in non-UBSan builds for clang
+Subject: [PATCH 16/22] enable -fwrapv in non-UBSan builds for clang
 
 ---
  build/config/compiler/BUILD.gn | 6 ++++++
  1 file changed, 6 insertions(+)
 
 diff --git a/build/config/compiler/BUILD.gn b/build/config/compiler/BUILD.gn
-index 70375bd88c41..0da9c137adec 100644
+index db02a326f1f1..b32bb2fa81ab 100644
 --- a/build/config/compiler/BUILD.gn
 +++ b/build/config/compiler/BUILD.gn
-@@ -277,6 +277,9 @@ config("compiler") {
+@@ -281,6 +281,9 @@ config("compiler") {
        # crbug.com/485542
        ldflags += [ "-Wl,--fatal-warnings" ]
      }
@@ -21,7 +21,7 @@ index 70375bd88c41..0da9c137adec 100644
    } else {
      cflags += [
        # Assume UTF-8 by default to avoid code page dependencies.
-@@ -286,6 +289,9 @@ config("compiler") {
+@@ -290,6 +293,9 @@ config("compiler") {
        # Don't look for includes in %INCLUDE%.
        cflags += [ "/X" ]
      }
@@ -30,7 +30,7 @@ index 70375bd88c41..0da9c137adec 100644
 +    }
    }
  
-   # Eliminate build metadata (__DATE__, __TIME__ and __TIMESTAMP__) for
+   if (is_clang && is_debug) {
 -- 
 2.14.3
 
