@@ -1,14 +1,14 @@
-From 4d43b60cb3e4fd69986aa0a51eeff13e3fb789d1 Mon Sep 17 00:00:00 2001
+From 93c475f41b8170181bc7d89c537f79ae6973d465 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Fri, 18 Nov 2016 10:53:56 -0500
-Subject: [PATCH 14/22] remove mremap from the system call whitelist
+Subject: [PATCH 14/24] remove mremap from the system call whitelist
 
 ---
- sandbox/linux/seccomp-bpf-helpers/baseline_policy_android.cc             | 1 -
- services/service_manager/sandbox/linux/bpf_cdm_policy_linux.cc           | 1 -
- .../service_manager/sandbox/linux/bpf_pdf_compositor_policy_linux.cc     | 1 -
- services/service_manager/sandbox/linux/bpf_renderer_policy_linux.cc      | 1 -
- services/service_manager/sandbox/linux/bpf_utility_policy_linux.cc       | 1 -
+ sandbox/linux/seccomp-bpf-helpers/baseline_policy_android.cc     | 1 -
+ services/service_manager/sandbox/linux/bpf_cdm_policy_linux.cc   | 1 -
+ .../sandbox/linux/bpf_pdf_compositor_policy_linux.cc             | 1 -
+ .../service_manager/sandbox/linux/bpf_renderer_policy_linux.cc   | 1 -
+ .../service_manager/sandbox/linux/bpf_utility_policy_linux.cc    | 1 -
  5 files changed, 5 deletions(-)
 
 diff --git a/sandbox/linux/seccomp-bpf-helpers/baseline_policy_android.cc b/sandbox/linux/seccomp-bpf-helpers/baseline_policy_android.cc
@@ -24,10 +24,10 @@ index ba2d363a2252..bdbb5d3ea841 100644
      // Used on pre-N to initialize threads in ART.
      case __NR_modify_ldt:
 diff --git a/services/service_manager/sandbox/linux/bpf_cdm_policy_linux.cc b/services/service_manager/sandbox/linux/bpf_cdm_policy_linux.cc
-index 214d76abfb0c..535a2c369894 100644
+index 9d39e5d5de43..d43b1a7cf369 100644
 --- a/services/service_manager/sandbox/linux/bpf_cdm_policy_linux.cc
 +++ b/services/service_manager/sandbox/linux/bpf_cdm_policy_linux.cc
-@@ -38,7 +38,6 @@ ResultExpr CdmProcessPolicy::EvaluateSyscall(int sysno) const {
+@@ -39,7 +39,6 @@ ResultExpr CdmProcessPolicy::EvaluateSyscall(int sysno) const {
  #if defined(__i386__) || defined(__arm__)
      case __NR_ugetrlimit:
  #endif
@@ -72,5 +72,5 @@ index c7f9009c4315..b4ae692fdd71 100644
      case __NR_sysinfo:
      case __NR_times:
 -- 
-2.14.3
+2.23.0
 

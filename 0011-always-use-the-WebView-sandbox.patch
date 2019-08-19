@@ -1,17 +1,17 @@
-From e011b6dded9754782570f00e86816318acf05c43 Mon Sep 17 00:00:00 2001
+From ef0ec7db74399fb880887a6e9954ffa6db788b8c Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Tue, 22 Nov 2016 07:34:45 -0500
-Subject: [PATCH 11/22] always use the WebView sandbox
+Subject: [PATCH 11/24] always use the WebView sandbox
 
 ---
- .../chromium/WebViewChromiumFactoryProvider.java        | 17 ++---------------
+ .../WebViewChromiumFactoryProvider.java         | 17 ++---------------
  1 file changed, 2 insertions(+), 15 deletions(-)
 
 diff --git a/android_webview/glue/java/src/com/android/webview/chromium/WebViewChromiumFactoryProvider.java b/android_webview/glue/java/src/com/android/webview/chromium/WebViewChromiumFactoryProvider.java
-index 025ba9867536..f7e37b9d6f74 100644
+index e808a822dca3..4da7ae31e0e9 100644
 --- a/android_webview/glue/java/src/com/android/webview/chromium/WebViewChromiumFactoryProvider.java
 +++ b/android_webview/glue/java/src/com/android/webview/chromium/WebViewChromiumFactoryProvider.java
-@@ -273,21 +273,8 @@ public class WebViewChromiumFactoryProvider implements WebViewFactoryProvider {
+@@ -275,21 +275,8 @@ public class WebViewChromiumFactoryProvider implements WebViewFactoryProvider {
                  CommandLineUtil.initCommandLine();
              }
  
@@ -28,13 +28,13 @@ index 025ba9867536..f7e37b9d6f74 100644
 -            }
 -            if (multiProcess) {
 -                CommandLine cl = CommandLine.getInstance();
--                cl.appendSwitch("webview-sandboxed-renderer");
+-                cl.appendSwitch(AwSwitches.WEBVIEW_SANDBOXED_RENDERER);
 -            }
 +            CommandLine cl = CommandLine.getInstance();
-+            cl.appendSwitch("webview-sandboxed-renderer");
++            cl.appendSwitch(AwSwitches.WEBVIEW_SANDBOXED_RENDERER);
  
-             ThreadUtils.setWillOverrideUiThread(true);
-             BuildInfo.setBrowserPackageInfo(packageInfo);
+             int applicationFlags = ContextUtils.getApplicationContext().getApplicationInfo().flags;
+             boolean isAppDebuggable = (applicationFlags & ApplicationInfo.FLAG_DEBUGGABLE) != 0;
 -- 
-2.14.3
+2.23.0
 

@@ -1,10 +1,10 @@
-From 9af4c82f337bfdb52c7416af97d8b78e268bd3d6 Mon Sep 17 00:00:00 2001
+From 22ece2e3a466ee97e8c57321aa5bd05a0e8a962d Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Mon, 28 Nov 2016 15:49:09 -0500
-Subject: [PATCH 17/22] add DuckDuckGo as the default search engine
+Subject: [PATCH 17/24] add DuckDuckGo as the default search engine
 
 ---
- .../template_url_prepopulate_data.cc               | 170 +++++++++++++--------
+ .../template_url_prepopulate_data.cc          | 170 +++++++++++-------
  1 file changed, 107 insertions(+), 63 deletions(-)
 
 diff --git a/components/search_engines/template_url_prepopulate_data.cc b/components/search_engines/template_url_prepopulate_data.cc
@@ -928,5 +928,5 @@ index 5fd11a9daa81..663698bc848d 100644
      &bing,
      &yahoo,
 -- 
-2.14.3
+2.23.0
 

@@ -1,11 +1,11 @@
-From e1d11f7af9ef2e3a69f9ba5df559ad4b422f5595 Mon Sep 17 00:00:00 2001
+From 30847cacc7e6ecc11efaa60f319b87a5e34611ff Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Tue, 6 Mar 2018 00:27:41 -0500
-Subject: [PATCH 09/22] disable showing popular sites
+Subject: [PATCH 09/24] disable showing popular sites
 
 ---
- components/ntp_tiles/constants.cc                 |  4 ++--
- testing/variations/fieldtrial_testing_config.json | 18 ------------------
+ components/ntp_tiles/constants.cc              |  4 ++--
+ .../variations/fieldtrial_testing_config.json  | 18 ------------------
  2 files changed, 2 insertions(+), 20 deletions(-)
 
 diff --git a/components/ntp_tiles/constants.cc b/components/ntp_tiles/constants.cc
@@ -30,10 +30,10 @@ index b40488bcd098..3cfb203d065a 100644
  
  }  // namespace ntp_tiles
 diff --git a/testing/variations/fieldtrial_testing_config.json b/testing/variations/fieldtrial_testing_config.json
-index f84acc84e17d..afdd94a7c448 100644
+index 5124bf1901bb..94b2e1df5d31 100644
 --- a/testing/variations/fieldtrial_testing_config.json
 +++ b/testing/variations/fieldtrial_testing_config.json
-@@ -2835,29 +2835,11 @@
+@@ -2953,29 +2953,11 @@
                  "ios"
              ],
              "experiments": [
@@ -64,5 +64,5 @@ index f84acc84e17d..afdd94a7c448 100644
              ]
          }
 -- 
-2.14.3
+2.23.0
 

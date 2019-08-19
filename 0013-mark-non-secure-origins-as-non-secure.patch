@@ -1,28 +1,27 @@
-From fb0c6e54d7cd1c3e37d93d2051232721d053114b Mon Sep 17 00:00:00 2001
+From 493d0f4ccd22a12b979e200ec82228f7d5fc6bc1 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Fri, 20 Oct 2017 21:20:50 -0400
-Subject: [PATCH 13/22] mark non-secure origins as non-secure
+Subject: [PATCH 13/24] mark non-secure origins as non-secure
 
 ---
- components/security_state/core/security_state.cc | 5 +----
- 1 file changed, 1 insertion(+), 4 deletions(-)
+ components/security_state/core/security_state.cc | 4 +---
+ 1 file changed, 1 insertion(+), 3 deletions(-)
 
 diff --git a/components/security_state/core/security_state.cc b/components/security_state/core/security_state.cc
-index cb27b5765db7..5ed7c2a82072 100644
+index 4890135b4d96..3e87756c8086 100644
 --- a/components/security_state/core/security_state.cc
 +++ b/components/security_state/core/security_state.cc
-@@ -48,10 +48,7 @@ void SetSecurityLevelAndRelatedFieldsForNonSecureFieldTrial(
+@@ -46,9 +46,7 @@ SecurityLevel GetSecurityLevelForNonSecureFieldTrial(
      }
    }
  
 -  // Default to dangerous on editing form fields and otherwise
 -  // warning.
--  security_info->security_level =
--      input_events.insecure_field_edited ? DANGEROUS : HTTP_SHOW_WARNING;
-+  security_info->security_level = DANGEROUS;
+-  return input_events.insecure_field_edited ? DANGEROUS : HTTP_SHOW_WARNING;
++  return DANGEROUS;
  }
  
- ContentStatus GetContentStatus(bool displayed, bool ran) {
+ std::string GetHistogramSuffixForSecurityLevel(
 -- 
-2.14.3
+2.23.0
 

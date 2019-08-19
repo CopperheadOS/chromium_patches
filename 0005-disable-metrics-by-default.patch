@@ -1,14 +1,14 @@
-From 59ef1925fcb6418406a266026634e40e0b438618 Mon Sep 17 00:00:00 2001
+From 0bd4a1ddadea8473de90ef651c9af58f17105994 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Thu, 24 Nov 2016 11:41:00 -0500
-Subject: [PATCH 05/22] disable metrics by default
+Subject: [PATCH 05/24] disable metrics by default
 
 ---
- .../src/org/chromium/chrome/browser/firstrun/FirstRunActivityBase.java  | 2 +-
+ .../chromium/chrome/browser/firstrun/FirstRunActivityBase.java  | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/chrome/android/java/src/org/chromium/chrome/browser/firstrun/FirstRunActivityBase.java b/chrome/android/java/src/org/chromium/chrome/browser/firstrun/FirstRunActivityBase.java
-index fe3345c6e81e..f9a953d747df 100644
+index 9c69e1071c79..70ef53e01211 100644
 --- a/chrome/android/java/src/org/chromium/chrome/browser/firstrun/FirstRunActivityBase.java
 +++ b/chrome/android/java/src/org/chromium/chrome/browser/firstrun/FirstRunActivityBase.java
 @@ -38,7 +38,7 @@ public abstract class FirstRunActivityBase extends AsyncInitializationActivity {
@@ -21,5 +21,5 @@ index fe3345c6e81e..f9a953d747df 100644
      private boolean mNativeInitialized;
  
 -- 
-2.14.3
+2.23.0
 

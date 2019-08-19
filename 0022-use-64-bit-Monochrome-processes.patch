@@ -1,22 +1,22 @@
-From 6bcbbcd1620e88c75b44b1069bf41f4ec6c0e808 Mon Sep 17 00:00:00 2001
+From cd77dc298f22f2f4f371cbb7add0f30ba844e625 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Wed, 1 May 2019 11:39:59 -0400
-Subject: [PATCH 22/22] use 64-bit Monochrome processes
+Subject: [PATCH 22/24] use 64-bit Monochrome processes
 
 ---
  chrome/android/BUILD.gn | 7 +++++++
  1 file changed, 7 insertions(+)
 
 diff --git a/chrome/android/BUILD.gn b/chrome/android/BUILD.gn
-index b8e737bef24a..2e712505160b 100644
+index 1f315a6f5845..bbde2ee38d88 100644
 --- a/chrome/android/BUILD.gn
 +++ b/chrome/android/BUILD.gn
-@@ -1741,6 +1741,13 @@ monochrome_public_apk_or_module_tmpl("monochrome_public_apk") {
-   if (!enable_chrome_android_internal) {
-     verify_android_configuration = true
-   }
+@@ -1802,6 +1802,13 @@ monochrome_public_apk_or_module_tmpl("monochrome_public_apk") {
+   version_name = chrome_version_name
+   apk_name = "MonochromePublic"
+   target_type = "android_apk"
 +
-+  if (android_64bit_target_cpu && enable_64_bit_browser) {
++  if (android_64bit_target_cpu) {
 +    is_64_bit_browser = true
 +    if (build_apk_secondary_abi) {
 +      include_32_bit_webview = true
@@ -26,5 +26,5 @@ index b8e737bef24a..2e712505160b 100644
  
  if (public_android_sdk) {
 -- 
-2.14.3
+2.23.0
 
